@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23111'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' text-anchor='middle' fill='%23fff'%3EAS%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Angelica Setiono · Finance Graduate, FP&amp;A">
+<meta property="og:description" content="Finance graduate in Amsterdam. FP&amp;A, business control and financial analysis case studies.">
+<meta property="og:image" content="https://angelicasetiono.github.io/assets/portrait.jpg">
+<meta property="og:url" content="https://angelicasetiono.github.io/">
+<style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<title>Angelica Setiono Portfolio</title>
+<meta name="description" content="Angelica Setiono, finance graduate in Amsterdam. FP&A, business control and financial analysis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one full-width column (max 1200px). Hero = identity (left) + draggable photo desk (right).
+   Each section: label + serif title, then full-width content. Monochrome; a soft spotlight follows the pointer. */
+:root{
+  --bg:#FAFAF9; --surface:#FFFFFF; --ink:#111111; --muted:#6B6B6B; --faint:#B5B5B3; --line:#E4E4E2; --soft:#F1F1EF;
+  --c-act:#111111; --c-fc:#A3A3A3; --spot:rgb(0 0 0 / .045); --shadow:rgb(0 0 0 / .14);
+  --f-display:"Instrument Serif", Georgia, "Times New Roman", serif;
+  --f-body:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0F0F0F; --surface:#171717; --ink:#ECECEC; --muted:#9A9A9A; --faint:#555555; --line:#262626; --soft:#1E1E1E;
+  --c-act:#ECECEC; --c-fc:#6E6E6E; --spot:rgb(255 255 255 / .05); --shadow:rgb(0 0 0 / .5); color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0F0F0F; --surface:#171717; --ink:#ECECEC; --muted:#9A9A9A; --faint:#555555; --line:#262626; --soft:#1E1E1E;
+  --c-act:#ECECEC; --c-fc:#6E6E6E; --spot:rgb(255 255 255 / .05); --shadow:rgb(0 0 0 / .5); color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.65;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+.spot{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(640px circle at var(--mx,70%) var(--my,30%),var(--spot),transparent 70%)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;margin:0;line-height:1.05;text-wrap:balance}
+.label{font:500 12px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.in{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+
+/* nav */
+.nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);transition:box-shadow .3s}
+.nav.solid{box-shadow:0 1px 0 var(--line)}
+.nav .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.mark{font:400 24px/1 var(--f-display);text-decoration:none}
+.mark i{font-style:italic}
+.navlinks{display:flex;gap:24px;align-items:center;font-size:14px;font-weight:500}
+.navlinks a{text-decoration:none;color:var(--muted);transition:color .2s}
+.navlinks a:hover,.navlinks a.on{color:var(--ink)}
+@media (max-width:860px){.navlinks a:not(.btn){display:none}}
+
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 14px var(--f-body);padding:11px 18px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink)!important;text-decoration:none;cursor:pointer;transition:border-color .2s,opacity .2s}
+.btn:hover{border-color:var(--ink)}
+.btn.solid{background:var(--ink);color:var(--bg)!important;border-color:var(--ink)}
+.btn.solid:hover{opacity:.85}
+.btn .arr{transition:transform .25s var(--ease)}
+.btn:hover .arr{transform:translate(2px,-2px)}
+
+/* hero */
+.hero .in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center;padding-block:calc(128px + env(safe-area-inset-top,0px)) 72px}
+@media (max-width:960px){.hero .in{grid-template-columns:1fr;gap:44px;padding-block:calc(108px + env(safe-area-inset-top,0px)) 40px}}
+.portrait{display:inline-block;margin:0 0 22px;padding:5px;border-radius:50%;border:1px solid var(--line);position:relative}
+.portrait img{display:block;width:clamp(104px,10vw,140px);aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:center;transition:transform .6s var(--ease)}
+.portrait:hover img{transform:scale(1.04)}
+.portrait::after{content:"";position:absolute;right:8px;bottom:8px;width:14px;height:14px;border-radius:50%;background:var(--ink);border:3px solid var(--bg)}
+.status{display:inline-flex;align-items:center;gap:9px;font-size:13px;color:var(--muted)}
+.status i{width:7px;height:7px;border-radius:50%;background:var(--ink);animation:blink 2.4s infinite}
+@keyframes blink{50%{opacity:.25}}
+.name{font-size:clamp(60px,8.2vw,120px);letter-spacing:-.025em;line-height:.9;margin-top:18px}
+.name .ln{display:block;overflow:hidden;padding-bottom:.05em}
+.name .ln > span{display:inline-block;animation:rise 1s var(--ease) both}
+.name .ln:nth-child(2) > span{animation-delay:.1s}
+@keyframes rise{from{transform:translateY(105%)}}
+.role{font:600 20px/1.4 var(--f-body);margin:22px 0 0}
+.role span{color:var(--muted);font-weight:500}
+.pitch{color:var(--muted);max-width:44ch;margin:10px 0 0;font-size:16.5px}
+.ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+
+.desk-wrap{position:relative}
+.desk-wrap .hint{display:flex;justify-content:space-between;font:500 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.desk{position:relative;height:clamp(300px,34vw,430px);border:1px dashed var(--line);border-radius:18px;touch-action:pan-y;background:color-mix(in srgb,var(--surface) 35%,transparent)}
+.pic{position:absolute;left:0;top:0;width:clamp(120px,30%,190px);margin:0;background:var(--surface);padding:8px 8px 0;border-radius:6px;box-shadow:0 14px 30px -14px var(--shadow),0 0 0 1px var(--line);
+  cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;transition:box-shadow .3s}
+.pic.drag{cursor:grabbing;box-shadow:0 30px 56px -20px var(--shadow),0 0 0 1px var(--line)}
+.pic img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top left;border-radius:3px;filter:grayscale(1);transition:filter .4s;pointer-events:none}
+.pic:hover img,.pic.drag img{filter:none}
+.pic figcaption{font:500 11px/1.3 var(--f-mono);letter-spacing:.03em;color:var(--muted);padding:8px 2px 9px}
+.pic.namecard{width:clamp(150px,36%,220px);padding:18px 18px 16px}
+.pic.namecard b{display:block;font:400 clamp(22px,2.2vw,28px)/1.05 var(--f-display)}
+.pic.namecard span{display:block;font:500 11px/1.6 var(--f-mono);color:var(--muted);margin-top:12px}
+
+/* sections */
+section{padding-block:clamp(64px,8vw,104px);position:relative;z-index:1}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px;padding-top:28px;border-top:1px solid var(--line)}
+.sec-head > div{min-width:0}
+.sec-title{font-size:clamp(40px,5vw,64px);letter-spacing:-.02em;margin-top:10px}
+.sec-title em{font-style:italic}
+.sec-title sup{font:500 13px var(--f-mono);color:var(--muted);vertical-align:top;margin-left:6px;letter-spacing:0}
+.sec-note{color:var(--muted);max-width:42ch;margin:0}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:24px}}
+.lead{font:400 clamp(28px,3vw,40px)/1.2 var(--f-display);margin:0}
+.lead i{font-style:italic}
+.about-body p{color:var(--muted);margin:0 0 16px;font-size:16.5px}
+.about-body p b{color:var(--ink);font-weight:600}
+.facts{margin:28px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;border-top:1px solid var(--line);padding-top:20px}
+@media (max-width:560px){.facts{grid-template-columns:1fr}}
+.facts dt{font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.facts dd{margin:6px 0 0;font-weight:600;font-size:15px}
+
+/* timeline (experience & education) */
+.tl{list-style:none;margin:0;padding:0 0 0 30px;position:relative}
+.tl::before{content:"";position:absolute;left:5px;top:10px;bottom:10px;width:1px;background:var(--line)}
+.tl::after{content:"";position:absolute;left:5px;top:10px;width:1px;height:calc(var(--p,0) * (100% - 20px));background:var(--ink)}
+.tl > li{position:relative;display:grid;grid-template-columns:170px minmax(0,1fr);gap:28px;padding:4px 0 44px}
+.tl > li:last-child{padding-bottom:4px}
+.tl > li::before{content:"";position:absolute;left:-30px;top:9px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:1.5px solid var(--ink);z-index:1}
+.tl > li.now::before{background:var(--ink)}
+@media (max-width:640px){.tl > li{grid-template-columns:1fr;gap:4px}}
+.when{font:500 12px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:6px;font-variant-numeric:tabular-nums}
+.tl h3{font-size:clamp(26px,2.6vw,34px)}
+.org{font-weight:600;font-size:15px;margin-top:6px}
+.org span{color:var(--muted);font-weight:500}
+.badge{font:600 10.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--ink);border-radius:5px;padding:2px 7px;margin-left:10px;vertical-align:5px}
+.tl ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:15px;display:grid;gap:5px;max-width:72ch}
+.tl p{margin:10px 0 0;color:var(--muted);font-size:15px;max-width:72ch}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tag{font:500 12px var(--f-body);padding:4px 11px;border-radius:999px;background:var(--soft);color:var(--ink)}
+.minis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:18px;border:1px solid var(--line);border-radius:14px;overflow:hidden;max-width:720px;background:var(--surface)}
+@media (max-width:560px){.minis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.minis div{padding:14px 16px;border-right:1px solid var(--line)}
+.minis div:last-child{border-right:0}
+@media (max-width:560px){.minis div:nth-child(2){border-right:0}.minis div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+.minis b{display:block;font:400 36px/1 var(--f-display);letter-spacing:-.02em}
+.minis span{display:block;font-size:12.5px;color:var(--muted);line-height:1.4;margin-top:6px}
+
+/* strengths */
+.pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--ink)}
+@media (max-width:900px){.pillars{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.pillars{grid-template-columns:1fr}}
+.pillar{padding:22px 20px 24px 0;border-bottom:1px solid var(--line)}
+.pillar + .pillar{padding-left:20px;border-left:1px solid var(--line)}
+@media (max-width:900px){.pillar:nth-child(3){padding-left:0;border-left:0}}
+@media (max-width:520px){.pillar + .pillar{padding-left:0;border-left:0}}
+.pillar h3{font-size:26px}
+.pillar p{margin:8px 0 0;color:var(--muted);font-size:15px}
+.tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:24px;align-items:center}
+.tools .label{margin-right:8px}
+
+/* education */
+.certs{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.certs li{display:grid;grid-template-columns:170px minmax(0,1fr) auto;gap:28px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px;align-items:baseline}
+.certs li b{font-weight:600}
+.certs li span:last-child{color:var(--muted);text-align:right}
+@media (max-width:640px){.certs li{grid-template-columns:1fr;gap:2px}.certs li span:last-child{text-align:left}}
+.subhead{font:400 28px/1.1 var(--f-display);margin:56px 0 16px}
+
+/* case studies */
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font:600 12.5px var(--f-body);padding:8px 15px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+.chip:hover{color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;list-style:none;margin:0;padding:0}
+@media (max-width:760px){.cards{grid-template-columns:1fr}}
+.card{width:100%;height:100%;text-align:left;font:inherit;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s,border-color .35s;padding:0}
+.card:hover,.card:focus-visible{transform:translateY(-4px);border-color:var(--faint);box-shadow:0 24px 44px -28px var(--shadow)}
+.cover{aspect-ratio:16/8;max-width:100%;overflow:hidden;background:var(--soft);border-bottom:1px solid var(--line)}
+.cover img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block;filter:grayscale(1);transition:filter .45s,transform .7s var(--ease)}
+.card:hover .cover img,.card:focus-visible .cover img{filter:none;transform:scale(1.04)}
+.cover .t{height:100%;display:grid;place-items:center;text-align:center;background:var(--ink);color:var(--bg)}
+.cover .t b{display:block;font:400 clamp(44px,5vw,64px)/1 var(--f-display)}
+.cover .t span{display:block;font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;opacity:.65;margin-top:8px}
+.card-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.kind{font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.card h3{font-size:clamp(26px,2.4vw,32px)}
+.card h3 .go{display:inline-block;font-size:.7em;margin-left:6px;transition:transform .25s var(--ease)}
+.card:hover h3 .go{transform:translate(3px,-3px)}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.fig{display:flex;align-items:baseline;gap:10px;margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
+.fig b{font:400 26px/1 var(--f-display)}
+.fig span{font-size:13px;color:var(--muted)}
+
+/* contact */
+.closing h2{font-size:clamp(56px,9vw,128px);letter-spacing:-.03em;line-height:.9}
+.closing h2 em{font-style:italic}
+.closing-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;margin-top:32px}
+@media (max-width:760px){.closing-row{grid-template-columns:1fr}}
+.closing p{color:var(--muted);max-width:50ch;margin:0}
+.mail{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:16px}
+.mail code{font:500 15px var(--f-mono);white-space:nowrap;user-select:all}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;position:relative;z-index:1}
+footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:24px calc(24px + env(safe-area-inset-bottom,0px))}
+footer a{text-decoration:none;color:var(--ink)}
+
+/* case-study sheet */
+.scrim{position:fixed;inset:0;background:rgb(0 0 0 / .45);z-index:90;backdrop-filter:blur(3px)}
+.sheet{position:fixed;top:0;right:0;bottom:0;width:min(680px,100%);background:var(--surface);z-index:91;overflow-y:auto;overscroll-behavior:contain;
+  padding:calc(28px + env(safe-area-inset-top,0px)) max(30px,env(safe-area-inset-right,0px)) calc(48px + env(safe-area-inset-bottom,0px)) 30px;
+  box-shadow:-30px 0 80px rgb(0 0 0 / .25);animation:slide .5s var(--ease)}
+@media (max-width:520px){.sheet{padding-left:20px;padding-right:max(20px,env(safe-area-inset-right,0px))}}
+@keyframes slide{from{transform:translateX(50px);opacity:.3}}
+.sheet .close{float:right;padding:9px 16px}
+.sheet h2{font-size:clamp(38px,5vw,52px);margin:16px 0 8px;clear:both}
+.sheet .ctx{color:var(--muted);margin:0}
+.sheet h4{font:500 12px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:32px 0 12px}
+.sheet p,.sheet li{font-size:15.5px}
+.sheet ul{padding-left:18px;margin:0;display:grid;gap:7px}
+.kv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:24px}
+.kv div{border:1px solid var(--line);border-radius:12px;padding:14px}
+.kv b{display:block;font:400 30px var(--f-display);line-height:1.1}
+.kv span{font-size:12.5px;color:var(--muted);line-height:1.35;display:block}
+@media (max-width:420px){.kv{grid-template-columns:1fr 1fr}}
+.pending{border:1.5px dashed var(--line);border-radius:12px;padding:14px 16px;font-size:14px;color:var(--muted)}
+.gallery{display:grid;gap:14px}
+.gallery figure{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg)}
+.gallery a{display:block}
+.gallery img{display:block;width:100%;height:auto}
+.gallery figcaption{font-size:13px;color:var(--muted);padding:9px 12px;border-top:1px solid var(--line)}
+.chart{border:1px solid var(--line);border-radius:12px;padding:14px 14px 8px;position:relative}
+.chart .legend{display:flex;gap:16px;font-size:13px;color:var(--muted);margin-bottom:6px;flex-wrap:wrap}
+.chart .legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.chart svg{width:100%;height:auto;display:block;overflow:visible}
+.chart svg text{fill:var(--muted);font:11px var(--f-mono)}
+.chart svg text.val{fill:var(--ink);font-weight:500}
+.chart svg:hover .bar{opacity:.55}
+.chart svg .bar:hover{opacity:1}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font:12px var(--f-body);padding:6px 9px;border-radius:8px;white-space:nowrap;transform:translate(-50%,-110%)}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+.tblwrap + .tblwrap{margin-top:14px}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+.tbl caption{caption-side:bottom;text-align:left;font-size:12.5px;color:var(--muted);padding:8px 12px}
+.tbl th,.tbl td{padding:8px 12px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+.tbl th:first-child,.tbl td:first-child{text-align:left}
+.tbl th{font:500 12px var(--f-mono);color:var(--muted)}
+.tbl tr.sum td{font-weight:700;border-top:1px solid var(--ink)}
+.note{font-size:13px;color:var(--muted);margin:8px 0 0}
+.sheet .tags{margin-top:0}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+
+<div class="spot" id="spot" aria-hidden="true"></div>
+
+<header class="nav" id="nav"><div class="in">
+  <a class="mark" href="#top">Angelica <i>S.</i></a>
+  <nav class="navlinks" aria-label="Main">
+    <a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#work">Case studies</a>
+    <a class="btn" href="#contact">Get in touch</a>
+  </nav>
+</div></header>
+
+<main id="top">
+  <section class="hero" style="padding:0"><div class="in">
+    <div>
+      <figure class="portrait"><img src="assets/portrait.jpg" alt="Portrait of Angelica Setiono"></figure><br>
+      <span class="status"><i></i>Open to FP&amp;A and controlling roles · Amsterdam</span>
+      <h1 class="name"><span class="ln"><span>Angelica</span></span><span class="ln"><span><em>Setiono</em></span></span></h1>
+      <p class="role">Finance Graduate <span>· FP&amp;A · Business Control</span></p>
+      <p class="pitch">I consolidate performance data, explain variances and build reports people can trust. Most recently at Mileway (Blackstone).</p>
+      <div class="ctas">
+        <a class="btn solid" href="#work">View case studies <span class="arr">↘</span></a>
+        <a class="btn" href="https://www.linkedin.com/in/angelicasetiono" target="_blank" rel="noopener">LinkedIn <span class="arr">↗</span></a>
+        <a class="btn" href="assets/Angelica_Setiono_CV.pdf" target="_blank" rel="noopener">Download CV <span class="arr">↓</span></a>
+      </div>
+    </div>
+    <div class="desk-wrap">
+      <div class="hint"><span>From my work</span><span>Drag the photos</span></div>
+      <div class="desk" id="desk" aria-label="Pictures from my work. Drag them around.">
+        <figure class="pic namecard" data-x=".05" data-y=".08" data-r="-4"><b>Angelica Setiono</b><span>Finance &amp; Control<br>Amsterdam · 2026</span></figure>
+        <figure class="pic" data-x=".42" data-y=".05" data-r="5"><img src="assets/philips-xl-valuation.jpg" alt="Philips DCF valuation sheet"><figcaption>DCF model · Philips</figcaption></figure>
+        <figure class="pic" data-x=".7" data-y=".2" data-r="-4"><img src="assets/sap-order-to-cash.jpg" alt="Order-to-cash process mining in Celonis"><figcaption>Order-to-cash · Celonis</figcaption></figure>
+        <figure class="pic" data-x=".12" data-y=".5" data-r="6"><img src="assets/mileway-definitions-blurred.jpg" alt="Blurred Mileway peer benchmarking matrix"><figcaption>Peer benchmarking · blurred</figcaption></figure>
+        <figure class="pic" data-x=".46" data-y=".5" data-r="-6"><img src="assets/philips-xl-ratio-chart.jpg" alt="Ratio comparison chart, Philips vs Siemens"><figcaption>Ratio analysis · 2024</figcaption></figure>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="about"><div class="in">
+    <div class="sec-head"><div><span class="label">About</span><h2 class="sec-title">Hello, I'm <em>Angelica.</em></h2></div></div>
+    <div class="about">
+      <p class="lead">A finance graduate in Amsterdam who likes making the numbers <i>right</i>, then explaining what they <i>mean.</i></p>
+      <div class="about-body">
+        <p>I studied International Business at the <b>Hogeschool van Amsterdam</b>, specialising in International Finance &amp; Control. During my internship at <b>Mileway (Blackstone)</b> I learned that good analysis starts with data you can trust, so I spent much of my time reconciling reports and building checks that catch errors early.</p>
+        <p>I'm now a Business Consultant Intern at <b>Blackmont Consulting</b>, and I'm looking to start my career in <b>FP&amp;A, financial control or business controlling</b> at an international company.</p>
+        <dl class="facts">
+          <div><dt>Looking for</dt><dd>FP&amp;A · Finance or Business Controller</dd></div>
+          <div><dt>Languages</dt><dd>Indonesian · English · Dutch (elementary)</dd></div>
+          <div><dt>Off the clock</dt><dd>Tennis, baking, secondhand fashion</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="experience" style="padding-top:0"><div class="in">
+    <div class="sec-head"><div><span class="label">Career</span><h2 class="sec-title">Experience</h2></div><p class="sec-note">Internships and leadership roles, most recent first.</p></div>
+    <ol class="tl">
+      <li class="now"><span class="when">Oct 2026 – Now</span><div><h3>Business Consultant Intern<span class="badge">Current</span></h3><div class="org">Blackmont Consulting <span>· Amsterdam</span></div>
+        <p>Completing sector training on how client businesses operate, to analyse their processes and recommend improvements.</p></div></li>
+      <li><span class="when">Feb – Jun 2026</span><div><h3>Portfolio Strategy Intern</h3><div class="org">Mileway (Blackstone) <span>· Amsterdam · last-mile logistics real estate</span></div>
+        <ul>
+          <li>Maintained lease-level tenancy schedule data and checked it against signed lease contracts: rent, start and end dates, renewals, expiries and break options</li>
+          <li>Prepared the Top Vacancies and Lease Events tables, monthly and quarterly, for Benelux and Nordic tenants</li>
+          <li>Reconciled source data against core calculations in Smartsheet and SharePoint for 5 recurring monthly reports, finding and correcting 10+ errors and raising each with its owner</li>
+          <li>Consolidated monthly performance data from 10 European countries into one standard format and explained key variances, feeding 15 Asset Management performance decks and quarterly update (QSU) presentations</li>
+          <li>Built a structured check that tests Excel formulas and flags inconsistent raw data before reporting, cutting manual review time by about 5 hours a month</li>
+          <li>Refreshed Power BI dashboards through Power Query and built peer benchmarking databases for European and US logistics REITs: WAULT, NOI, NIY, occupancy and like-for-like rental growth</li>
+        </ul>
+        <div class="minis" aria-label="Internship in numbers">
+          <div><b>10</b><span>countries consolidated monthly</span></div>
+          <div><b>15</b><span>asset management decks</span></div>
+          <div><b>10+</b><span>errors fixed at the source</span></div>
+          <div><b>~5h</b><span>saved each month</span></div>
+        </div>
+        <div class="tags"><span class="tag">Excel</span><span class="tag">Power Query</span><span class="tag">Power BI</span><span class="tag">SharePoint</span><span class="tag">Smartsheet</span></div></div></li>
+      <li><span class="when">Dec 2023 – Dec 2024</span><div><h3>Head of Business Fund &amp; Creative Economy</h3><div class="org">PPI Amsterdam <span>· Indonesian Student Association</span></div>
+        <ul><li>Prepared the department's budgets, financial statements and cash flow overview for the board</li><li>Processed vendor payments and reimbursements from 6 projects, checking each claim against receipts and supporting documents, with an audit trail in Excel and OneDrive</li><li>Issued invoices to sponsors and partners, tracked open receivables and followed up on overdue amounts until settled</li><li>Led a team of 5 to deliver 7 programmes, generating €5,000 gross profit, the top-ranked department</li></ul>
+        <div class="tags"><span class="tag">Budgeting</span><span class="tag">Payments &amp; receivables</span><span class="tag">Excel</span><span class="tag">Team lead</span></div></div></li>
+    </ol>
+  </div></section>
+
+  <section id="education" style="padding-top:0"><div class="in">
+    <div class="sec-head"><div><span class="label">Studies</span><h2 class="sec-title">Education</h2></div></div>
+    <ol class="tl">
+      <li><span class="when">2023 – 2026</span><div><h3>BBA International Business (Hons.)</h3><div class="org">Hogeschool van Amsterdam <span>· International Finance &amp; Control</span></div>
+        <ul><li>Thesis graded 8/10: algorithmic transparency in credit scoring by digital lending platforms</li><li>Amsterdam Talent Scholarship, 3 consecutive years</li><li>Coursework: Financial Risk Management, Investment Analysis, Sustainable Finance, Managerial Accounting, Management Control, IFRS</li></ul></div></li>
+      <li><span class="when">2025 – 2026</span><div><h3>Pre-Master's Business Administration</h3><div class="org">University of Amsterdam <span>· GPA 7.5/10</span></div></div></li>
+    </ol>
+    <h3 class="subhead">Certifications</h3>
+    <ul class="certs">
+      <li><span class="when">2026</span><b>FP&amp;A Professionals (FPAP)</b><span>Corporate Finance Institute</span></li>
+      <li><span class="when">2026</span><b>Excel for Finance · Excel VBA for Finance</b><span>Corporate Finance Institute</span></li>
+      <li><span class="when">2026</span><b>SAP Financials Essential Training</b><span>LinkedIn Learning · NASBA CPE</span></li>
+    </ul>
+  </div></section>
+
+  <section id="skills" style="padding-top:0"><div class="in">
+    <div class="sec-head"><div><span class="label">What I bring</span><h2 class="sec-title">Strengths &amp; <em>tools</em></h2></div></div>
+    <div class="pillars">
+      <div class="pillar"><h3>Performance reporting</h3><p>Consolidating multi-country data into one standard and explaining the variances behind it.</p></div>
+      <div class="pillar"><h3>Reconciliation &amp; control</h3><p>Testing reports against source data, catching errors and fixing them where they start.</p></div>
+      <div class="pillar"><h3>Forecasting &amp; valuation</h3><p>Three-statement models, long-range forecasts and DCF valuations with scenario testing.</p></div>
+      <div class="pillar"><h3>Process automation</h3><p>Replacing slow manual checks with Excel, VBA and AI-assisted tools.</p></div>
+    </div>
+    <div class="tools"><span class="label">Tools</span>
+      <span class="tag">Excel (advanced)</span><span class="tag">Power Query</span><span class="tag">VBA</span><span class="tag">Power BI</span><span class="tag">SAP S/4HANA</span><span class="tag">Stata</span><span class="tag">SharePoint</span><span class="tag">Smartsheet</span><span class="tag">Jira</span><span class="tag">Notion</span><span class="tag">Claude Code</span>
+    </div>
+  </div></section>
+
+  <section id="work" style="padding-top:0"><div class="in">
+    <div class="sec-head"><div><span class="label">Selected work</span><h2 class="sec-title">Case <em>studies</em><sup id="count"></sup></h2></div>
+      <div class="filters" role="group" aria-label="Filter case studies">
+        <button class="chip" type="button" aria-pressed="true" data-f="all">All</button>
+        <button class="chip" type="button" aria-pressed="false" data-f="Work">Professional</button>
+        <button class="chip" type="button" aria-pressed="false" data-f="University">University</button>
+        <button class="chip" type="button" aria-pressed="false" data-f="Leadership">Leadership</button>
+      </div></div>
+    <ul class="cards" id="grid"></ul>
+  </div></section>
+
+  <section id="contact" class="closing" style="padding-top:0"><div class="in">
+    <div class="sec-head" style="margin-bottom:24px"><div><span class="label">Contact</span></div></div>
+    <h2>Let's <em>talk.</em></h2>
+    <div class="closing-row">
+      <div>
+        <p>Hiring for FP&amp;A or controlling? I'm open to on-site, hybrid and remote roles in and around Amsterdam, and I usually reply within a day.</p>
+        <div class="mail"><code id="email">angelicasetiono2005@gmail.com</code><button class="btn solid" type="button" id="copy">Copy email</button></div>
+      </div>
+      <div class="ctas" style="margin-top:0"><a class="btn" href="assets/Angelica_Setiono_CV.pdf" target="_blank" rel="noopener">CV (PDF) <span class="arr">↓</span></a><a class="btn" href="https://www.linkedin.com/in/angelicasetiono" target="_blank" rel="noopener">LinkedIn <span class="arr">↗</span></a></div>
+    </div>
+  </div></section>
+</main>
+<footer><div class="in"><span>© 2026 Angelica Setiono</span><span id="clock">Amsterdam</span><a href="#top">Back to top ↑</a></div></footer>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="s-title"></aside>
+
+<script>
+const projects=[
+ {cat:"Work",kind:"Benchmarking",org:"Mileway",title:"Logistics REIT peer benchmarking",
+  blurb:"A database comparing Mileway with listed European and US logistics REITs, built on metric definitions I aligned across every peer.",
+  img:"assets/mileway-definitions-blurred.jpg",lock:"Blurred · confidential",
+  fig:"10 peers",figl:"8 operating metrics aligned",
+  ctx:"Mileway (Blackstone) · Portfolio Strategy Intern · 2026",
+  stats:[["10","European & US peers"],["8","operating metrics defined"],["5","KPIs tracked monthly"]],
+  problem:"Peers report the same metric in different ways. One company's occupancy is physical, another's is economic (ERV-based), and some don't define it at all. Comparing headline numbers without checking definitions gives misleading conclusions.",
+  did:["Built and maintained a peer database on listed European and US logistics REITs","Tracked occupancy, NOI, net initial yield, WAULT and like-for-like growth","Mapped how each peer defines 8 operating metrics (physical, economic and EPRA occupancy, ERV, rental income growth, retention, re-leasing spreads and developments) so comparisons are like for like","Flagged where a metric is not defined or not reported, so the team knew which comparisons to treat with care"],
+  tools:["Excel","Annual reports","EPRA guidelines"],
+  gallery:[["assets/mileway-definitions-blurred.jpg","Operating metrics definitions matrix (detail blurred to protect confidential information)"]],
+  files:"The original workbook is internal to Mileway. Only a blurred preview is shown."},
+ {cat:"Work",kind:"Reporting",org:"Mileway",title:"Monthly performance consolidation",
+  blurb:"Turned data from 10 countries into one standard format and explained the key variances for Asset Management performance decks and quarterly updates.",
+  cover:["15","asset management decks"],
+  fig:"10 countries",figl:"in one reporting standard",
+  ctx:"Mileway (Blackstone) · Portfolio Strategy Intern · 2026",
+  stats:[["10","countries consolidated"],["15","performance decks"],["10+","errors corrected"]],
+  problem:"Each country reported monthly performance in its own way, which made comparison slow and error-prone.",
+  did:["Consolidated monthly data from 10 European countries into one standard format","Explained the key variances behind the numbers for 15 Asset Management performance decks and quarterly update (QSU) presentations","Reconciled 5 recurring reports against core calculations, corrected 10+ errors and raised each with its owner","Kept tenancy schedules matched to signed leases and built Lease Events and Top Vacancies tables"],
+  tools:["Excel","Power BI","SharePoint"],
+  files:"Internal to Mileway. Not shown."},
+ {cat:"Work",kind:"Automation",org:"Mileway",title:"Automated Excel review check",
+  blurb:"Replaced a slow manual review step with a check that tests formulas and flags inconsistent raw data.",
+  cover:["~5 h","saved every month"],
+  fig:"5 reports",figl:"checked automatically",
+  ctx:"Mileway (Blackstone) · Portfolio Strategy Intern · 2026",
+  stats:[["~5 h","saved each month"],["5","monthly reports"],["Auto","formula testing"]],
+  problem:"Report preparation included a manual review step that took hours and still let inconsistencies through.",
+  did:["Built a structured check that tests Excel formulas across 5 recurring reports","Flagged inconsistent raw data before it reached the reports","Cut manual review time by about 5 hours a month"],
+  tools:["Excel","Formula auditing","Data validation"],
+  files:"Internal to Mileway. Not shown."},
+ {cat:"Leadership",kind:"Budgeting · P&L",org:"PPI Amsterdam · 2024",title:"Event & merchandise budgeting",
+  blurb:"Budgeted costs and set prices for a food stall and a merchandise line, then measured actual sales against the plan.",
+  cover:["€364","merchandise profit"],
+  fig:"€108",figl:"stall revenue vs €165 budget",
+  ctx:"PPI Amsterdam (Indonesian Student Association) · Head of Business Fund & Creative Economy · 2024",
+  stats:[["€632","merchandise revenue"],["58%","merchandise profit margin"],["−35%","stall revenue vs budget"]],
+  problem:"My department had to fund its own programmes. Every activity needed a cost budget before money was spent, prices that covered those costs, and a check afterwards on what we actually earned.",
+  did:["Built a line-item cost budget for a food stall at a welcome day (February 2024): 34 items across 6 products, with the cheapest supplier chosen per item, for €74.41 in total","Priced each product from its cost per portion and a target margin (18% to 89%), giving planned revenue of €165","Recorded actual sales by product and compared them with the plan: €108, 35% below budget. Savoury snacks hit target, brownies beat it by selling leftovers at a second event, and gift packages fell well short","Costed a merchandise line (stickers, mugs and T-shirts) produced in Indonesia, converting rupiah costs to euros, and built a product P&L: €632 revenue, €268 cost, €364 profit","These activities fed into the department's €5,000 gross profit across 7 programmes, the highest of any department"],
+  tables:[{cap:"Welcome day food stall, 24 Feb 2024: revenue in €",head:["Product","Budget","Actual","Variance"],rows:[["Bakwan sayur (savoury fritters)","30.00","30.00","0.00"],["Brownies","20.00","30.50","+10.50"],["Teh botol (tea)","30.00","20.50","−9.50"],["Popcorn","30.00","17.00","−13.00"],["Coke","10.00","4.00","−6.00"],["Gift package","45.00","6.00","−39.00"],["Total","165.00","108.00","−57.00",1]]},
+   {cap:"Merchandise P&L, 2024, in €",head:["Product","Units","Revenue","Cost","Profit"],rows:[["Stickers","32","32.00","4.12","27.88"],["Mugs","15","150.00","60.47","89.53"],["T-shirts (incl. printing & delivery)","30","450.00","203.41","246.59"],["Total","77","632.00","268.00","364.00",1]]}],
+  tools:["Excel","Budgeting","Pricing","Variance analysis"],
+  files:"Budget and sales sheets. Available on request."},
+ {cat:"University",kind:"Thesis · Research",org:"HvA · 2026",title:"Algorithmic transparency in credit scoring",
+  blurb:"My bachelor thesis: how regulation and market pressure shape what crowdlending platforms in the Netherlands and Indonesia reveal about their credit-scoring algorithms.",
+  cover:["8/10","thesis grade"],
+  fig:"NL vs ID",figl:"5 platforms · 5 expert interviews",
+  ctx:"Hogeschool van Amsterdam · Bachelor thesis · June 2026 · Graded 8/10",
+  stats:[["8/10","thesis grade"],["5","expert interviews"],["2","regulatory regimes compared"]],
+  problem:"Crowdlending platforms increasingly use machine-learning models to score borrowers and price their loans, but these models are hard to explain to the people they affect. I asked how regulation and market pressure shape how transparent platforms are about their credit scoring, in a mature (Dutch and EU) and an emerging (Indonesian) regulatory environment.",
+  did:["Designed a qualitative comparative case study of two Dutch and three Indonesian crowdlending platforms, using Institutional Theory, Signaling Theory and the accuracy-versus-explainability literature","Interviewed 5 practitioners in credit risk, compliance and management (45–60 minutes each, in English and Indonesian)","Analysed the platforms' public documents and the rules that govern them: GDPR, the EU crowdfunding regulation, the EU AI Act and Indonesia's OJK regulations","Coded interviews and documents with one framework in Atlas.ti and cross-checked the two sources against each other"],
+  findings:["Regulation, not market demand, drives transparency. EU rules produce broad but shallow disclosure through standard templates; Indonesia's dense, audit-enforced rules are seen as protecting a low-literacy investor base","Platforms disclose outputs (the risk grade, the terms) but protect their methods, and the line sits in opposite places: the Dutch case publishes the method and curates the data, the Indonesian case publishes the data and keeps the method","Being regulated is itself the strongest trust signal, while many mandatory disclosures go unread","Product type sets the balance between accuracy and explainability: business and asset-backed lending stays human-led, consumer lending moves towards automation","Recommended layered disclosure by audience, and publishing the basis for each risk grade without revealing the model"],
+  tools:["Atlas.ti","Thematic analysis","Expert interviews","GDPR · EU AI Act","OJK regulation"],
+  files:"Full thesis available on request."},
+ {cat:"University",kind:"Valuation · DCF",org:"HvA · 2025",title:"Philips equity valuation",
+  blurb:"A full Excel model of Philips: three statements, ratio analysis, CAPM and a 10-year operating free cash flow valuation.",
+  img:"assets/philips-xl-valuation.jpg",
+  fig:"€58.90",figl:"fair value per share vs €24.40",
+  ctx:"Hogeschool van Amsterdam · Investment Analysis · Team of 5",
+  stats:[["€58.90","fair value per share"],["8.92%","WACC"],["+141%","upside vs €24.40"]],
+  problem:"Philips reported net losses in 2023 (−€463m) and 2024 (−€698m) and traded at €24.40 per share. What are its future cash flows actually worth?",
+  did:["Built the income statement, balance sheet and cash flow statement: 2023–2024 actuals and a 2025–2027 forecast, with vertical and horizontal analysis","Compared liquidity, efficiency, leverage and profitability ratios with the industry average and Siemens","Projected operating free cash flow to 2034 from four drivers: revenue growth, operating margin, net capex to revenue change, and working capital to revenue","Estimated WACC at 8.92% with CAPM (beta 0.89, risk-free rate 2.6%, AEX market return 11.7%, cost of equity 10.7%) and a 5.1% pre-tax cost of debt at 25/75 debt to equity","Valued the company at €59.7bn enterprise value and €54.5bn equity value: €58.90 per share, 141% above the market price","Cross-checked with P/E: 9.8× at the current price against 23.7× at fair value (2025)"],
+  chart:true,
+  tools:["Excel","Three-statement model","DCF / OFCF","CAPM","Ratio analysis"],
+  gallery:[["assets/philips-xl-valuation.jpg","OFCF valuation: from cash flows to €58.90 per share"],["assets/philips-xl-capm.jpg","Cost of capital inputs: CAPM and capital structure"],["assets/philips-xl-ratios.jpg","Financial ratios: Philips vs industry and Siemens, 2023–2024"],["assets/philips-xl-ratio-chart.jpg","Ratio comparison with Siemens, 2024"],["assets/philips-xl-statements.jpg","Financial statements: 2023–2024 actuals and 2025–2027 forecast"]],
+  files:"Excel model (financial statements, ratios, CAPM, valuation). Full file available on request."},
+ {cat:"University",kind:"Sustainable finance",org:"HvA · 2025",title:"Philips sustainable investment analysis",
+  blurb:"How Philips' circular business model and competitive position hold up against recalls, tariffs and strong rivals.",
+  cover:["25%","circular revenue target"],
+  fig:"€1.9bn",figl:"annual R&D analysed",
+  ctx:"Hogeschool van Amsterdam · Sustainable Finance · Team of 5 · June 2025",
+  stats:[["€1.9bn","R&D per year (>10% of sales)"],["25%","revenue from circular products (target)"],["5","authors"]],
+  problem:"Assess whether Philips' sustainability-led strategy supports its value as an investment. I wrote the section on business model and competitive position.",
+  did:["Analysed the circular-economy business model: EcoDesign targets, subscription models and partnerships with insurers on preventive care","Positioned Philips against GE HealthCare and Siemens Healthineers in imaging, monitoring and respiratory care","Assessed the impact of the Respironics recall, U.S.–China tariffs and the lowered 10.8–11.3% EBITA margin outlook","Concluded that Philips is 'resilient but transitional': strong R&D and scale, with trust and China exposure still to fix"],
+  tools:["Annual report analysis","Competitive analysis","ESG"],
+  files:"Group report (Word). Available on request."},
+ {cat:"University",kind:"ERP · SAP",org:"HvA · 2024",title:"SAP S/4HANA & process mining",
+  blurb:"Ran purchase-to-pay, production and order-to-cash in SAP, then compared target and actual costs per order.",
+  img:"assets/sap-order-cost.jpg",
+  fig:"MM · PP · SD",figl:"plus Celonis process mining",
+  ctx:"Hogeschool van Amsterdam · Business IT · 2023/2024",
+  stats:[["3","SAP modules"],["Target vs actual","cost per G/L account"],["495","O2C variants analysed"]],
+  problem:"Understand how transactions flow through an ERP system end to end, and how cost and process data can be used for control.",
+  did:["Ran purchase-to-pay in MM: purchase orders, goods receipts and invoice verification","Ran production orders in PP, posted goods issue and receipt, and reviewed target vs actual cost and variance by G/L account","Ran order-to-cash in SD through billing and journal entries, and traced the document flow","Analysed an order-to-cash process in Celonis: process variants, throughput time and case coverage"],
+  tools:["SAP S/4HANA","MM","PP","SD","Celonis"],
+  gallery:[["assets/sap-order-cost.jpg","Production order: target vs actual cost by G/L account"],["assets/sap-order-to-cash.jpg","Order-to-cash process mining in Celonis"]],
+  files:"Course portfolio with screenshots. Available on request."},
+ {cat:"University",kind:"Accounting · IAS 16",org:"HvA · 2025",title:"IAS 16: Philips' property, plant & equipment",
+  blurb:"How Philips recognises, depreciates and disposes of €2.5bn of fixed assets, checked against IAS 16.",
+  cover:["€2.45bn","PP&E under the cost model"],
+  fig:"3 years",figl:"of PP&E notes analysed",
+  ctx:"Hogeschool van Amsterdam · International Financial Accounting · Team of 5 · March 2025",
+  stats:[["€2,452m","PP&E, end of 2024"],["€608m","depreciation in 2024"],["€43m","NBV disposed in 2024"]],
+  problem:"Does Philips account for property, plant and equipment the way IAS 16 requires? Our group report covered how Philips applies international accounting standards; I wrote the IAS 16 section.",
+  did:["Broke down PP&E for 2022–2024 into owned assets (land and buildings, machinery, other equipment, assets under construction) and right-of-use assets","Checked initial recognition at cost: only directly attributable costs are capitalised, while administrative and training costs are expensed","Explained why Philips uses the cost model rather than revaluation, and why there is no revaluation surplus on the balance sheet","Traced straight-line depreciation: €612m in 2022, €619m in 2023 and €608m in 2024, split between owned and right-of-use assets","Analysed disposals: in 2024, €196m of gross cost was derecognised at a €43m net book value, with gains and losses in other business income"],
+  tables:[{cap:"PP&E book value (€ million), from Philips' annual reports",head:["","2022","2023","2024"],rows:[["Land and buildings","514","476","454"],["Machinery and installations","488","453","440"],["Other equipment","408","363","401"],["Assets under construction","309","274","271"],["Owned assets","1,718","1,565","1,565",1],["Right-of-use assets","919","919","886"],["Total PP&E","2,637","2,484","2,452",1]]}],
+  tools:["IAS 16","IFRS","Annual report analysis"],
+  files:"Group report (Word). My section: IAS 16. Available on request."}
+];
+
+// Philips revenue, € million (from the valuation model)
+const rev=[[2023,18169,1],[2024,18021,1],[2025,18652],[2026,19398],[2027,20368],[2028,21447],[2029,22541],[2030,23668],[2031,24780],[2032,25821],[2033,26802],[2034,27687]];
+function revChart(){
+  const W=560,H=230,L=44,B=24,T=22,max=30000,bw=(W-L)/rev.length;
+  const y=v=>H-B-(v/max)*(H-B-T);
+  let g="";
+  [0,10000,20000,30000].forEach(t=>{g+=`<line x1="${L}" x2="${W}" y1="${y(t)}" y2="${y(t)}" stroke="var(--line)" stroke-width="1"/><text x="${L-6}" y="${y(t)+4}" text-anchor="end">${t/1000}bn</text>`});
+  rev.forEach((r,i)=>{
+    const x=L+i*bw+bw*.18,w=bw*.64,top=y(r[1]),h=H-B-top,col=r[2]?"var(--c-act)":"var(--c-fc)";
+    g+=`<path class="bar" data-t="${r[0]}${r[2]?" actual":" forecast"}: €${r[1].toLocaleString("en")}m" fill="${col}" d="M${x},${H-B} V${top+4} q0,-4 4,-4 h${w-8} q4,0 4,4 V${H-B} Z"/>`;
+    g+=`<text x="${x+w/2}" y="${H-6}" text-anchor="middle">${String(r[0]).slice(2)}</text>`;
+    if(i===1||i===rev.length-1) g+=`<text class="val" x="${x+w/2}" y="${top-6}" text-anchor="middle">${(r[1]/1000).toFixed(1)}</text>`;
+  });
+  return `<div class="chart" id="chart"><div class="legend"><span><i style="background:var(--c-act)"></i>Actual</span><span><i style="background:var(--c-fc)"></i>Forecast</span><span>Revenue, € billion</span></div>
+   <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Philips revenue: €18.0bn actual in 2024, forecast rising to €27.7bn in 2034">${g}</svg><div class="tip" id="tip" hidden></div></div>
+   <p class="note">Forecast growth: 3.5% in 2025, 4% in 2026, 5% in 2027, then easing from 5.3% to 3.3% by 2034. Source: valuation model.</p>`;
+}
+function wireChart(){
+  const c=document.getElementById("chart");if(!c)return;const tip=document.getElementById("tip");
+  c.querySelectorAll(".bar").forEach(b=>{
+    b.addEventListener("mouseenter",()=>{const r=b.getBoundingClientRect(),cr=c.getBoundingClientRect();tip.textContent=b.dataset.t;tip.style.left=(r.left-cr.left+r.width/2)+"px";tip.style.top=(r.top-cr.top)+"px";tip.hidden=false;});
+    b.addEventListener("mouseleave",()=>tip.hidden=true);
+  });
+}
+
+
+const $=s=>document.querySelector(s);
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* spotlight */
+const spot=$("#spot");
+addEventListener("pointermove",e=>{spot.style.setProperty("--mx",e.clientX+"px");spot.style.setProperty("--my",e.clientY+"px")},{passive:true});
+
+/* clock */
+function tick(){try{$("#clock").textContent=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Amsterdam",hour:"2-digit",minute:"2-digit"}).format(new Date())+" in Amsterdam"}catch(e){}}
+tick();setInterval(tick,30000);
+
+/* nav state + timeline lines */
+const nav=$("#nav"),tls=[...document.querySelectorAll(".tl")],links=[...document.querySelectorAll(".navlinks a:not(.btn)")];
+function onScroll(){
+  nav.classList.toggle("solid",scrollY>20);
+  tls.forEach(tl=>{const r=tl.getBoundingClientRect();const p=reduce?1:Math.min(1,Math.max(0,(innerHeight*.75-r.top)/r.height));tl.style.setProperty("--p",p)});
+}
+addEventListener("scroll",onScroll,{passive:true});onScroll();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id))}),{rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll("main section[id]").forEach(s=>io.observe(s));
+
+/* draggable photo desk */
+const desk=$("#desk"),pics=[...desk.querySelectorAll(".pic")];let z=10;
+function place(){
+  const W=desk.clientWidth,H=desk.clientHeight;
+  pics.forEach(p=>{
+    if(p.dataset.moved)return;
+    p._x=Math.max(4,Math.min(parseFloat(p.dataset.x)*W,W-p.offsetWidth-4));
+    p._y=Math.max(4,Math.min(parseFloat(p.dataset.y)*H,H-p.offsetHeight-4));
+    p._r=parseFloat(p.dataset.r);p.style.transform=`translate(${p._x}px,${p._y}px) rotate(${p._r}deg)`;
+  });
+}
+pics.forEach((p,i)=>{
+  p.style.zIndex=i+1;let sx,sy,ox,oy,vx=0,lx,lt;
+  p.addEventListener("pointerdown",e=>{p.setPointerCapture(e.pointerId);p.classList.add("drag");p.style.zIndex=++z;sx=e.clientX;sy=e.clientY;ox=p._x;oy=p._y;lx=sx;lt=performance.now();p.style.transition="box-shadow .3s"});
+  p.addEventListener("pointermove",e=>{
+    if(!p.classList.contains("drag"))return;
+    const W=desk.clientWidth,H=desk.clientHeight;
+    p._x=Math.max(0,Math.min(W-p.offsetWidth,ox+e.clientX-sx));p._y=Math.max(0,Math.min(H-p.offsetHeight,oy+e.clientY-sy));
+    const now=performance.now();vx=(e.clientX-lx)/Math.max(16,now-lt);lx=e.clientX;lt=now;
+    p.style.transform=`translate(${p._x}px,${p._y}px) rotate(${p._r+Math.max(-12,Math.min(12,vx*14))}deg) scale(1.04)`;p.dataset.moved=1;
+  });
+  const end=()=>{if(!p.classList.contains("drag"))return;p.classList.remove("drag");p._r=Math.max(-10,Math.min(10,p._r+vx*6));
+    p.style.transition=reduce?"none":"transform .6s cubic-bezier(.2,.7,.1,1),box-shadow .3s";p.style.transform=`translate(${p._x}px,${p._y}px) rotate(${p._r}deg)`};
+  p.addEventListener("pointerup",end);p.addEventListener("pointercancel",end);
+});
+place();addEventListener("resize",place);document.querySelectorAll(".pic img").forEach(img=>img.addEventListener("load",place));
+
+/* case studies */
+const grid=$("#grid");
+function cover(p){return p.img?`<img src="${p.img}" alt="" loading="lazy">`:`<div class="t"><div><b>${p.cover[0]}</b><span>${p.cover[1]}</span></div></div>`}
+function render(f){
+  const list=projects.filter(p=>f==="all"||p.cat===f);
+  $("#count").textContent="("+String(list.length).padStart(2,"0")+")";
+  grid.innerHTML="";
+  list.forEach(p=>{
+    const li=document.createElement("li");
+    li.innerHTML=`<button type="button" class="card"><div class="cover">${cover(p)}</div>
+      <div class="card-body"><span class="kind">${p.kind} · ${p.org}</span><h3>${p.title}<span class="go" aria-hidden="true">↗</span></h3>
+      <p>${p.blurb}</p><div class="fig"><b>${p.fig}</b><span>${p.figl}</span></div></div></button>`;
+    li.firstElementChild.onclick=()=>openSheet(p);grid.appendChild(li);
+  });
+}
+render("all");
+document.querySelectorAll(".chip").forEach(c=>c.onclick=()=>{document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===c));render(c.dataset.f)});
+
+const sheet=$("#sheet"),scrim=$("#scrim");let last;
+function openSheet(p){
+  last=document.activeElement;
+  sheet.innerHTML=`<button class="btn close" type="button" id="x">Close</button>
+    <span class="label">${p.kind}</span><h2 id="s-title">${p.title}</h2><p class="ctx">${p.ctx}</p>
+    <div class="kv">${p.stats.map(s=>`<div><b>${s[0]}</b><span>${s[1]}</span></div>`).join("")}</div>
+    <h4>The challenge</h4><p>${p.problem}</p>
+    <h4>What I did</h4><ul>${p.did.map(d=>`<li>${d}</li>`).join("")}</ul>
+    ${p.findings?`<h4>What I found</h4><ul>${p.findings.map(d=>`<li>${d}</li>`).join("")}</ul>`:""}
+    ${p.chart?`<h4>Revenue forecast</h4>${revChart()}`:""}
+    ${p.tables?`<h4>The numbers</h4>${p.tables.map(t=>`<div class="tblwrap"><table class="tbl"><caption>${t.cap}</caption><thead><tr>${t.head.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${t.rows.map(r=>{const n=t.head.length,sum=r[n];return `<tr${sum?' class="sum"':''}>${r.slice(0,n).map(v=>`<td>${v}</td>`).join("")}</tr>`}).join("")}</tbody></table></div>`).join("")}`:""}
+    <h4>Tools</h4><div class="tags">${p.tools.map(t=>`<span class="tag">${t}</span>`).join("")}</div>
+    ${p.gallery?`<h4>From the work</h4><div class="gallery">${p.gallery.map(g=>`<figure><a href="${g[0]}" target="_blank" rel="noopener"><img src="${g[0]}" alt="${g[1]}" loading="lazy"></a><figcaption>${g[1]}</figcaption></figure>`).join("")}</div>`:""}
+    <h4>Files</h4><div class="pending">${p.files}</div>`;
+  sheet.hidden=false;scrim.hidden=false;sheet.scrollTop=0;wireChart();document.body.style.overflow="hidden";
+  $("#x").onclick=closeSheet;$("#x").focus();
+}
+function closeSheet(){sheet.hidden=true;scrim.hidden=true;document.body.style.overflow="";last&&last.focus()}
+scrim.onclick=closeSheet;addEventListener("keydown",e=>{if(e.key==="Escape"&&!sheet.hidden)closeSheet()});
+
+$("#copy").onclick=async e=>{
+  const b=e.currentTarget,t=$("#email").textContent;
+  try{await navigator.clipboard.writeText(t);b.textContent="Copied"}
+  catch{const r=document.createRange();r.selectNodeContents($("#email"));getSelection().removeAllRanges();getSelection().addRange(r);b.textContent="Selected, press Ctrl+C"}
+  setTimeout(()=>b.textContent="Copy email",2500);
+};
+</script>
+
+</body>
+</html>
